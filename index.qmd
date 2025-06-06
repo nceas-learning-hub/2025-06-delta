@@ -1,5 +1,5 @@
 ---
-title: About the course
+title: Delta course in June 2025
 format:
   theme-html:
     toc: false
@@ -9,7 +9,7 @@ format:
 
 :::
 
-## Delta Stewardship Council index.qmd
+## Delta Stewardship Council R and Github basics
 
 ## NCEAS Expertise
 
