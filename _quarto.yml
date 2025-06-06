@@ -47,10 +47,11 @@ website:
       # START SESSIONS
       - section: "Day 1"
         contents:
+        - s04_r_quarto_literate_analysis.qmd
         - s01_r_rstudio_server_setup.qmd
         - s02_git_setup.qmd
+        - s07_github_introduction2.qmd
         - s03_r_programming_introduction.qmd
-        - s04_r_quarto_literate_analysis.qmd
         - s05_activity_reproducibility_lego.qmd
       - section: "Day 2"
         contents:
