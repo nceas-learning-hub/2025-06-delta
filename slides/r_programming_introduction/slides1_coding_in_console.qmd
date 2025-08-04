@@ -1,0 +1,140 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme:
+      - lh_slides_style.scss ### this lives in folder with slide qmd file
+---
+
+## {#title-slide data-menu-title="Title Slide"} 
+
+[Working with R & RStudio]{.custom-title}
+
+[An introduction to programming in R]{.custom-subtitle}
+
+<hr class="hr-red">
+
+
+::: {.column width="50%"}
+[**NCEAS Learning Hub**]{.custom-subtitle2}<br>
+[coreR]{.custom-subtitle2}<br>
+[May 2025]{.custom-subtitle3}
+:::
+
+---
+
+
+##  {#welcom-to-r data-menu-title="Welcome to R Programming"}
+
+[Using R within the RStudio IDE]{.slide-title}
+
+<!-- R and RStudio icons here -->
+
+- R is a great language to learn data-oriented programming because it is widely adopted, user-friendly, and (most importantly) open source!
+- RStudio is a great integrated development environment (IDE) that lets you run R while accessing files, variable values, help screens, and much more!
+
+
+---
+
+##  {#r-rstudio data-menu-title="Difference between R and RStudio"}
+
+[Cooking up data science with R and RStudio!]{.slide-title}
+
+<!--coding as cooking metaphor; Allison's drawing here-->
+
+::: {.body-text .center-text}
+![Artwork by Allison Horst](images/allison-horst-code-kitchen.png){width=60%}
+:::
+
+::: {.body-text}
+- **R is a knife**. You have food to prepare, and the knife is one of the most important tools you’ll use to accomplish your task.
+- **RStudio is the kitchen**. RStudio provides a place to do your work!
+- **Data are your ingredients**.  We'll clean, slice, dice, and remix our data into actionable science!
+:::
+
+---
+
+##  {#rstudio-ide data-menu-title="RStudio IDE"}
+
+[RStudio IDE interface]{.slide-title}
+
+<hr>
+
+::: {.body-text}
+Let’s take a tour of the RStudio interface.
+:::
+  
+::: {.body-text .center-text}
+![](images/RStudio_IDE.png){width=80%}
+:::
+  
+Notice the default panes:
+
+-   Console (entire left)
+-   Environment/History (tabbed in upper right)
+-   Files/Plots/Packages/Help (tabbed in lower right)
+
+::: {.body-text .center-text}
+**Quick Tip:** You can change the default location of the panes, among many other things. More information [here](https://support.posit.co/hc/en-us/articles/200549016-Customizing-the-RStudio-IDE)
+:::
+
+---
+
+## Coding in the Console
+
+::: callout-important
+### But first, an important first question: **where are we?**
+
+If you've just opened RStudio for the first time, you'll be in your Home directory. This is noted by the `~/` at the top of the console. You can see too that the Files pane in the lower right shows what is in the Home directory where you are. You can navigate around within that Files pane and explore, but note that you won't change where you are: even as you click through you'll still be Home: `~/`.
+
+![](images/r_programming_introduction/RStudio_IDE_homedir.png){width="80%" fig-align="center"}
+:::
+
+We can run code in a couple of places in RStudio, including the Console, let's start there.
+
+At it's most basic, we can use R as a calculator, let's try a couple of examples in the console.
+
+```{r}
+#| eval: false
+# run in the console
+# really basic examples
+3*4
+3+4
+3-4
+3/4
+```
+
+::: {.callout-caution icon="false"}
+#### Quick Tip
+
+When you're in the console you'll see a greater than sign (`>`) at the start of a line. This is called the "prompt" and when we see it, it means R is ready to accept commands. If you see a plus sign (`+`) in the Console, it means R is waiting on additional information before running. You can always press escape (`esc`) to return to the prompt. Try practicing this by running `3*` (or any incomplete expression) in the console.
+:::
+
+
+---
+
+## {#example-code-slide data-menu-title="Example Code"}
+
+[Example Code]{.slide-title}
+
+<hr>
+
+::: {.body-text}
+Creating an object
+:::
+
+```r
+# think of this code as someone saying "important_value gets a value of 12".
+important_value <- 3*4
+```
+
+---
+
+While there are many cases where it makes sense to type code directly in to the the console, it is not a great place to write most of your code since you can't save what you ran. **A better way is to create an R Script, and write your code there.** Then when you run your code from the script, you can save it when you are done. We're going to continue writing code in the Console for now, but we'll code in an R Script later in this lesson
+
+
+
+

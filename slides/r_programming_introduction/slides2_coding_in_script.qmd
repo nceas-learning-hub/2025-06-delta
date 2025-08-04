@@ -1,0 +1,128 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme:
+      - lh_slides_style.scss ### this lives in folder with slide qmd file
+---
+
+## {#title-slide data-menu-title="Title Slide"} 
+
+[Working with R & RStudio]{.custom-title}
+
+[An introduction to programming in R]{.custom-subtitle}
+
+<hr class="hr-red">
+
+
+::: {.column width="50%"}
+[**NCEAS Learning Hub**]{.custom-subtitle2}<br>
+[coreR]{.custom-subtitle2}<br>
+[May 2025]{.custom-subtitle3}
+:::
+
+---
+
+::: callout-tip
+### Creating an R Script
+
+1.  From the "File" menu, select "New File"
+2.  Click "R Script" from the list of options
+
+RStudio should open your R Script automatically after creating it. Notice a new pane appears above the Console. This is called the **Source pane** and is where we write and edit R code and documents. This pane is only present if there are files open in the editor.
+
+3.  Save the R Script in your `script` folder, name the file `intro_to_programming.R`
+:::
+
+---
+
+### How to run code in an R Script
+
+Running code in an R Script is different than running code in the Console (aka you can't just press `return` / `enter`). To interpret and run the code you've written, R needs you to send the code from the script (or editor) to the Console. Some common ways to run code in an R Script include:
+
+1.  Place your cursor on the line of code you want to run and use the shortcut `command` + `return` or click the `Run` button in the top right of the Source pane.
+
+2.  Highlight the code you want to run, then use the shortcut `command` + `return` or click the `Run` button.
+
+---
+
+### R calculations with objects
+
+So we know that objects are how R stores information, and we know we create objects using the assignment operator `<-`. Let's build upon that and learn how to use an object in calculations.
+
+Imagine we have the weight of a dog in kilograms. Create the object `weight_kg` and assign it a value of 25.
+
+```{r}
+# weight of a dog in kilograms
+weight_kg <- 25
+```
+
+---
+
+Now that R has `weight_kg` saved in the Global Environment, we can run calculations with it.
+
+::: {.callout-exercise}
+
+**Using `weight_kg` run a simple calculation**
+
+Let's convert the weight into pounds. Weight in pounds is 2.2 times the weight in kg.
+
+::: {.callout-answer}
+
+```{r}
+# converting weight from kilograms to pounds
+2.2 * weight_kg
+```
+:::
+
+---
+
+:::
+
+You can also store more than one value in a single object. Storing a series of weights in a single object is a convenient way to perform the same operation on multiple values at the same time. One way to create such an object is with the function `c()`, which stands for combine or concatenate.
+
+First let's create a **vector** of weights in kilograms using `c()` (we'll talk more about vectors in the next section, [Data structures in R](#data_structures)).
+
+```{r}
+# create a vector of weights in kilograms
+weight_kg <- c(25, 33, 12)
+# call the object to inspect
+weight_kg
+```
+
+---
+
+Now convert the vector `weight_kg` to pounds.
+
+```{r}
+# covert `weight_kg` to pounds 
+weight_kg * 2.2
+```
+
+---
+
+Wouldn't it be helpful if we could save these new weight values we just converted? This might be important information we may need for a future calculation. How would you save these new weights in pounds?
+
+```{r}
+# create a new object 
+weight_lb <- weight_kg * 2.2
+# call `weight_lb` to check if the information you expect is there
+weight_lb
+```
+
+---
+
+::: {,callout-tip}
+#### Quick Tip
+
+You will make many objects and the assignment operator `<-` can be tedious to type over and over. Instead, use **RStudio's keyboard shortcut: `option` + `-` (the minus sign)**.
+
+Notice that RStudio automatically surrounds `<-` with spaces, which demonstrates a useful code formatting practice. Code is miserable to read on a good day. Give your eyes a break and use spaces.
+
+RStudio offers many handy [keyboard shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts). Also, `option`+`Shift`+`K` brings up a keyboard shortcut reference card.
+
+For more RStudio tips, check out Master of Environmental Data Science (MEDS) workshop: [IDE Tips & Tricks](https://ucsb-meds.github.io/IDE-tips-and-tricks/#/title-slide).
+:::
