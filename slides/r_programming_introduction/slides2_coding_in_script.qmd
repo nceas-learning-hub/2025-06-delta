@@ -11,18 +11,13 @@ format:
 
 ## {#title-slide data-menu-title="Title Slide"} 
 
-[Working with R & RStudio]{.custom-title}
+[Scripts in R and RStudio]{.custom-title}
 
 [An introduction to programming in R]{.custom-subtitle}
 
 <hr class="hr-red">
 
-
-::: {.column width="50%"}
-[**NCEAS Learning Hub**]{.custom-subtitle2}<br>
-[coreR]{.custom-subtitle2}<br>
-[May 2025]{.custom-subtitle3}
-:::
+[**NCEAS Learning Hub**]{.custom-subtitle2}
 
 ---
 
@@ -32,7 +27,11 @@ format:
 1.  From the "File" menu, select "New File"
 2.  Click "R Script" from the list of options
 
+!!! IMAGE
+
 RStudio should open your R Script automatically after creating it. Notice a new pane appears above the Console. This is called the **Source pane** and is where we write and edit R code and documents. This pane is only present if there are files open in the editor.
+
+!!! IMAGE
 
 3.  Save the R Script in your `script` folder, name the file `intro_to_programming.R`
 :::
@@ -41,11 +40,10 @@ RStudio should open your R Script automatically after creating it. Notice a new 
 
 ### How to run code in an R Script
 
-Running code in an R Script is different than running code in the Console (aka you can't just press `return` / `enter`). To interpret and run the code you've written, R needs you to send the code from the script (or editor) to the Console. Some common ways to run code in an R Script include:
+Running code in an R Script is different than running code in the Console (i.e., you can't just press `return` / `enter`). To interpret and run the code you've written, R needs you to send the code from the script (or editor) to the Console. Some common ways to run code in an R Script include:
 
-1.  Place your cursor on the line of code you want to run and use the shortcut `command` + `return` or click the `Run` button in the top right of the Source pane.
-
-2.  Highlight the code you want to run, then use the shortcut `command` + `return` or click the `Run` button.
+* Place your cursor on a line of code you want to run and use the shortcut `command` + `enter` (Mac) or `control` + `enter` (Windows), or click the green `Run` button in the top right of the Source pane.
+* Highlight the code you want to run (including multiple lines), then use the shortcut `command` + `enter` or click the `Run` button.
 
 ---
 
@@ -53,10 +51,16 @@ Running code in an R Script is different than running code in the Console (aka y
 
 So we know that objects are how R stores information, and we know we create objects using the assignment operator `<-`. Let's build upon that and learn how to use an object in calculations.
 
-Imagine we have the weight of a dog in kilograms. Create the object `weight_kg` and assign it a value of 25.
+Imagine we have the weight of a dog in kilograms. Create the object `weight_kg` and assign it a value of 25.  Write this as a line in your script, not the Console.  Then run it!
+
+:::{.callout-tip}
+### Writing human-readable comments
+
+Use the `#` at the start of a line to create a comment - R will not run any text after that, so you can add human-readable comments to help explain what the code is doing.
+:::
 
 ```{r}
-# weight of a dog in kilograms
+### weight of a dog in kilograms
 weight_kg <- 25
 ```
 
@@ -116,11 +120,11 @@ weight_lb
 ---
 
 ::: {,callout-tip}
-#### Quick Tip
+#### Quick Tips
 
 You will make many objects and the assignment operator `<-` can be tedious to type over and over. Instead, use **RStudio's keyboard shortcut: `option` + `-` (the minus sign)**.
 
-Notice that RStudio automatically surrounds `<-` with spaces, which demonstrates a useful code formatting practice. Code is miserable to read on a good day. Give your eyes a break and use spaces.
+Notice that the RStudio shortcut automatically surrounds `<-` with spaces, which demonstrates a useful code formatting practice. Code is miserable to read on a good day. Give your eyes a break and use spaces.
 
 RStudio offers many handy [keyboard shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts). Also, `option`+`Shift`+`K` brings up a keyboard shortcut reference card.
 

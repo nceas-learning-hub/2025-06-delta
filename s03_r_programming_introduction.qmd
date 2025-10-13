@@ -29,12 +29,19 @@ And **if R is your chef's knife, RStudio is your kitchen**. RStudio provides a p
 (and in this analogy, your ingredients are **data**!)
 
 ::: {.callout-warning}
+### R without RStudio?
+
 Just as you can prepare food without a kitchen, we could learn R without RStudio, but that's not what we're going to do.  RStudio makes it much easier to work with R, just as a well stocked kitchen makes cooking more fun.  We are going to take advantage of the great RStudio support, and learn R and RStudio together.
 :::
+
+:::{.callout-note}
+
+### New to coding? new to R? No worries!
 
 Something else to start us off is to mention that you are learning a new language here. It's an ongoing process, it takes time, you'll make mistakes, it can be frustrating, but it will be overwhelmingly awesome in the long run. We all speak at least one language; it's a similar process, really. And no matter how fluent you are, you'll always be learning, you'll be trying things in new contexts, learning words that mean the same as others, etc, just like everybody else. And just like any form of communication, there will be miscommunication that can be frustrating, but hands down we are all better off because of it.
 
 While language is a familiar concept, programming languages are in a different context from spoken languages and you will understand this context with time. For example: you have a concept that there is a first meal of the day, and there is a name for that: in English it's "breakfast." So if you're learning Spanish, you could expect there is a word for this concept of a first meal. (And you'd be right: "desayuno"). We will get you to expect that programming languages also have words (called functions) for concepts as well. You'll soon expect that there is a way to order values numerically. Or alphabetically. Or search for patterns in text. Or calculate the median. Or reorganize columns to rows. Or subset exactly what you want. We will get you to increase your expectations and learn to ask and find what you're looking for.
+:::
 
 ## Using R within the RStudio IDE
 
@@ -49,7 +56,7 @@ Let's take a tour of the RStudio interface.
 
 ### Objects in R
 
-Let's say the value of 12 that we got from running `3*4` is a really important value we need to keep. To keep information in R, we need to create an **object**. The way information is stored in R is through objects.
+Let's say the value of 12 that we got from running `3 * 4` is a really important value we need to keep. To keep information in R, we need to create an **object**. The way information is stored in R is through objects.
 
 We can assign a value of a mathematical operation (and more!) to an object in R using the assignment operator, `<-` (greater than sign and minus sign). All objects in R are created using the assignment operator, following this form: `object_name <- value`.
 
@@ -57,15 +64,19 @@ We can assign a value of a mathematical operation (and more!) to an object in R 
 
 **Create an object!**
 
-Assign `3*4` to an object called `important_value` and then inspect the object you just created.
+Assign your favorite number to an object called `fave_num`.  Then, create an object called `fave_squared` and assign the square of `fave_num` (use the superscript, like `5^2`), and inspect the object.
 
 ::: {.callout-answer}
 ```{r}
-# think of this code as someone saying "important_value gets 12".
-important_value <- 3*4
+### think of this code as someone saying "fave_num gets 42".
+fave_num <- 42
+
+### and then square it
+fave_squared <- fave_num^2
+fave_squared
 ```
 
-Notice how after creating the object, R doesn't print anything. However, we know our code worked because we see the object, and the value we wanted to store is now visible in our **Global Environment**. We can force R to print the value of the object by calling the object name (aka typing it out) or by using parentheses.
+Notice how after creating the `fave_num` object, R doesn't print anything. However, we know our code worked because we see the object, and the value we wanted to store is now visible in our **Global Environment**. We can force R to print the value of the object by calling the object name (aka typing it out) or by using parentheses.
 :::
 
 :::
@@ -78,10 +89,10 @@ When you begin typing an object name RStudio will automatically show suggested c
 :::
 
 ```{r}
-# printing the object by calling the object name
-important_value
-# printing the object by wrapping the assignment syntax in parentheses
-(important_value <- 3*4)
+### printing the object by calling the object name
+fave_squared
+### printing the object by wrapping the assignment syntax in parentheses
+(fave_squared <- fave_num^2)
 ```
 
 ::: {.callout-tip}
@@ -92,20 +103,18 @@ When you're in the Console use the up and down arrow keys to call your command h
 
 ### Naming Conventions
 
-Before we run more calculations, let's talk about naming objects. For the object, `important_value` we used an underscore to separate the object name. This naming convention is called **snake case**. There are other naming conventions including, but not limited to:
+Before we run more calculations, let's talk about naming objects. For the object `fave_num` we used an underscore to separate the object name. This naming convention is called **snake case**. There are other naming conventions including, but not limited to:
 
--   we_used_snake_case
+-   `we_used_snake_case`
+-   `someUseCamelCase`
+-   `SomeUseUpperCamelCaseAlsoCalledPascalCase`
 
--   someUseCamelCase
-
--   SomeUseUpperCamelCaseAlsoCalledPascalCase
-
-Choosing a [naming convention](https://en.wikipedia.org/wiki/Naming_convention_(programming)#:~:text=In%20computer%20programming%2C%20a%20naming,in%20source%20code%20and%20documentation) is a personal preference, but once you choose one - be consistent! A consistent naming convention will increase the readability of your code for others and your future self.
+Choosing a [naming convention](https://en.wikipedia.org/wiki/Naming_convention_(programming)#:~:text=In%20computer%20programming%2C%20a%20naming,in%20source%20code%20and%20documentation) is a personal preference, but once you choose one, or your collaborative team chooses one - be consistent! A consistent naming convention will increase the readability of your code for others and your future self.
 
 ::: {.callout-warning}
 #### Quick Tip
 
-Object names cannot start with a digit and cannot contain certain characters such as a comma or a space.
+Object names cannot start with a numeric digit and cannot contain certain characters such as commas, space, or hyphens.
 :::
 
 ## Running code in an R Script
