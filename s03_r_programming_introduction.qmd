@@ -66,7 +66,7 @@ We can assign a value of a mathematical operation (and more!) to an object in R 
 
 Assign your favorite number to an object called `fave_num`.  Then, create an object called `fave_squared` and assign the square of `fave_num` (use the superscript, like `5^2`), and inspect the object.
 
-::: {.callout-answer}
+:::: {.callout-answer}
 ```{r}
 ### think of this code as someone saying "fave_num gets 42".
 fave_num <- 42
@@ -77,7 +77,7 @@ fave_squared
 ```
 
 Notice how after creating the `fave_num` object, R doesn't print anything. However, we know our code worked because we see the object, and the value we wanted to store is now visible in our **Global Environment**. We can force R to print the value of the object by calling the object name (aka typing it out) or by using parentheses.
-:::
+::::
 
 :::
 
@@ -128,11 +128,61 @@ So far we've been running code in the Console, let's try running code in an R Sc
 ```
 
 
-!!! INCLUDE AN EXAMPLE HERE as a checkin from the slides!
+::: {.callout-exercise}
+
+**Create an vector!**
+
+Create a vector containing the values 18.1, 8.9, 11.3, 11.2, and 15.7.  These are heights of several trees in a park, in meters. Save the vector as an object with an appropriate name.  Then, convert the heights from meters to feet, and store the result in a new object with an appropriate name.
+
+Bonus: find the average height of trees in the park (hint: look at the `mean()` function: `?mean` will show you the help page)
+
+:::: {.callout-answer}
+```{r}
+### Height of trees in meters
+tree_h_m <- c(18.1, 8.9, 11.3, 11.2, 15.7)
+
+m_to_ft <- 3.28  ### meters to feet conversion ratio
+
+### Height of trees in feet
+tree_h_ft <- tree_h_m * m_to_ft
+
+### Mean height of trees, in feet
+mean(tree_h_ft)
+```
+::::
+
+:::
 
 ## Data types and structures in R
 
-!!! INTRO TEXT
+We've been using primarily `integer` or `numeric` data types so far. Let's create an object that has a string value or a `character` data type, i.e., text instead of numbers.
+
+```{r}
+science_rocks <- "yes it does!"
+```
+
+`"yes it does!"` is a string, and R knows it's text and not a number because it is surrounded by quotes `" "`.
+
+:::{.callout-exercise}
+Try running the following lines in your script or console:
+
+```{r}
+#| eval: false
+"Hello world!" * 5
+
+"7" * 5
+
+7 * 5
+```
+
+What happened? What do you see in the Console? How do the three lines differ?  (If in your script, either delete the non-functioning lines, or comment them out).
+:::
+
+**This lead us to an important concept in programming:** There are different "classes" or types of objects in R (or any other programming language). The operations you can do with an object will depend on what type of object it is because each object has their own specialized format, designed for a specific purpose. While `7 * 5` seems like a reasonable calculation, `"banana" * "apple"` doesn't make much sense.  But there are many cool things we can do with strings that we can't do with numbers. 
+
+:::{.callout-tip}
+You can work with strings in your data in R easily thanks to the [`stringr`](http://stringr.tidyverse.org/) and [`tidytext`](https://github.com/juliasilge/tidytext) packages.
+:::
 
 [Full Screen](slides/r_programming_introduction/slides3_data_structures.html)
 

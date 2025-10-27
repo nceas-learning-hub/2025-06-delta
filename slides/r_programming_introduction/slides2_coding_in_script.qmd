@@ -7,6 +7,9 @@ format:
     chalkboard: true
     theme:
       - lh_slides_style.scss ### this lives in folder with slide qmd file
+execute:
+  echo: true
+  code-line-numbers: false
 ---
 
 ## {#title-slide data-menu-title="Title Slide"} 
@@ -21,108 +24,115 @@ format:
 
 ---
 
-::: callout-tip
-### Creating an R Script
+## {#script1 data-menu-title="script1"} 
 
-1.  From the "File" menu, select "New File"
-2.  Click "R Script" from the list of options
+[Creating an R script]{.slide-title}
 
-!!! IMAGE
+::: {.columns}
 
-RStudio should open your R Script automatically after creating it. Notice a new pane appears above the Console. This is called the **Source pane** and is where we write and edit R code and documents. This pane is only present if there are files open in the editor.
+:::: {.column width="60%"}
 
-!!! IMAGE
+![](images/rstudio_script1.png){width=100%}
+:::: 
+<!-- end left column -->
 
-3.  Save the R Script in your `script` folder, name the file `intro_to_programming.R`
+:::: {.column width="40%"}
+
+::::: {.body-text}
+From the "File" menu, select "New File," then choose "R Script" from the list of options. (We'll look at other options later, particularly "Quarto document")
+
+You can also create the script from the "new file" button in the **Files** pane.
+
+Notice a new pane appears above the Console. This is called the **Source pane** and is where we write and edit R code and documents. This pane is only present if there are files open in the editor.
+:::::
+
+:::: 
+<!-- end right column -->
+
+::: 
+<!-- end .columns -->
+
+:::{.body-text}
+Save the R Script in your `script` folder, name the file `intro_to_programming.R`.  The name at the top of the **Source pane** will change from `Untitled` to the new file name.
 :::
 
 ---
 
-### How to run code in an R Script
+[A simple script]{.slide-title}
 
-Running code in an R Script is different than running code in the Console (i.e., you can't just press `return` / `enter`). To interpret and run the code you've written, R needs you to send the code from the script (or editor) to the Console. Some common ways to run code in an R Script include:
+:::{.body-text}
+Let's write some simple code in our script.  We'll start with the age of a dog in (human) years, then convert to dog years.
+:::
 
-* Place your cursor on a line of code you want to run and use the shortcut `command` + `enter` (Mac) or `control` + `enter` (Windows), or click the green `Run` button in the top right of the Source pane.
-* Highlight the code you want to run (including multiple lines), then use the shortcut `command` + `enter` or click the `Run` button.
+```{r}
+age_years <- 5
+
+age_dog_years <- age_years * 7
+```
+
+:::{.body-text}
+After typing those lines, do you see the values in the **Environment** pane?  Probably not - unlike the **Console**, the script does not automatically run the code when you type it in.
+
+To interpret and run the code you've written, R needs you to send the code from the script (or editor) to the Console to execute it. To run code in an R Script:
+
+* Place your cursor on (or at the end of) a line of code you want to run, or highlight the line(s). 
+* Then use the shortcut `command` + `enter` (Mac) or `control` + `enter` (Windows), or click the green `Run` button in the top right of the Source pane.
+
+Try these shortcuts out and get comfortable with them - you will do this a lot!
+:::
 
 ---
-
-### R calculations with objects
-
-So we know that objects are how R stores information, and we know we create objects using the assignment operator `<-`. Let's build upon that and learn how to use an object in calculations.
-
-Imagine we have the weight of a dog in kilograms. Create the object `weight_kg` and assign it a value of 25.  Write this as a line in your script, not the Console.  Then run it!
 
 :::{.callout-tip}
 ### Writing human-readable comments
+:::
 
-Use the `#` at the start of a line to create a comment - R will not run any text after that, so you can add human-readable comments to help explain what the code is doing.
+::: {.body-text}
+Use the pound sign/hashtag `#` at the start of a line to create a comment - R will not run any text after that, so you can add human-readable comments to help explain what the code is doing.
+
+Comments can also be used to "comment out" a line of code to temporarily prevent it from running.  Use `command` `shift` `C` as a shortcut to toggle this.
 :::
 
 ```{r}
-### weight of a dog in kilograms
-weight_kg <- 25
+### age in human years
+age_years <- 5  ### can also put comments on the same line as code
+
+### age in dog years
+age_dog_years <- age_years * 7
+
+### this line is commented out so will not run:
+# age_centuries <- age_years / 100 
 ```
 
 ---
 
-Now that R has `weight_kg` saved in the Global Environment, we can run calculations with it.
+[Multiple values]{.slide-title}
 
-::: {.callout-exercise}
+:::{.body-text}
 
-**Using `weight_kg` run a simple calculation**
+You can also store more than one value in a single object. Storing a series of ages in a single object is a convenient way to perform the same operation on multiple values at the same time. One way to create such an object is with the function `c()`, which stands for "combine".
 
-Let's convert the weight into pounds. Weight in pounds is 2.2 times the weight in kg.
-
-::: {.callout-answer}
-
-```{r}
-# converting weight from kilograms to pounds
-2.2 * weight_kg
-```
+Let's create a **vector** of ages using `c()` (we'll talk more about vectors in the next section, [Data structures in R](#data_structures)).
 :::
 
----
-
-:::
-
-You can also store more than one value in a single object. Storing a series of weights in a single object is a convenient way to perform the same operation on multiple values at the same time. One way to create such an object is with the function `c()`, which stands for combine or concatenate.
-
-First let's create a **vector** of weights in kilograms using `c()` (we'll talk more about vectors in the next section, [Data structures in R](#data_structures)).
-
 ```{r}
-# create a vector of weights in kilograms
-weight_kg <- c(25, 33, 12)
-# call the object to inspect
-weight_kg
+age_yrs <- c(5, 3, 7)  ### create a vector of ages
+
+yr_to_dog_yr <- 7      ### save the conversion factor as an object
+
+### convert `age_yrs` to dog years:
+age_dog_yrs <- age_yrs * yr_to_dog_yr 
+
+### inspect the values
+age_dog_yrs
 ```
 
 ---
 
-Now convert the vector `weight_kg` to pounds.
-
-```{r}
-# covert `weight_kg` to pounds 
-weight_kg * 2.2
-```
-
----
-
-Wouldn't it be helpful if we could save these new weight values we just converted? This might be important information we may need for a future calculation. How would you save these new weights in pounds?
-
-```{r}
-# create a new object 
-weight_lb <- weight_kg * 2.2
-# call `weight_lb` to check if the information you expect is there
-weight_lb
-```
-
----
-
-::: {,callout-tip}
+::: {.callout-tip}
 #### Quick Tips
 
-You will make many objects and the assignment operator `<-` can be tedious to type over and over. Instead, use **RStudio's keyboard shortcut: `option` + `-` (the minus sign)**.
+You will make many objects and the assignment operator `<-` can be tedious to type over and over. Instead, use **RStudio's keyboard shortcut: `option` + `-` (the minus sign)**. (use `alt` instead of `option` for Windows)
 
 Notice that the RStudio shortcut automatically surrounds `<-` with spaces, which demonstrates a useful code formatting practice. Code is miserable to read on a good day. Give your eyes a break and use spaces.
 
