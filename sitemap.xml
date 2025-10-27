@@ -1,35 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nceas-learning-hub.github.io/2025-06-delta/slides/r_programming_introduction/slides.html</loc>
-    <lastmod>2025-06-06T17:31:17.937Z</lastmod>
+    <loc>https://nceas-learning-hub.github.io/2025-06-delta/s01_r_rstudio_server_setup.html</loc>
+    <lastmod>2025-10-27T02:15:32.878Z</lastmod>
   </url>
   <url>
-    <loc>https://nceas-learning-hub.github.io/2025-06-delta/s05_activity_reproducibility_lego.html</loc>
-    <lastmod>2025-06-06T17:30:54.186Z</lastmod>
+    <loc>https://nceas-learning-hub.github.io/2025-06-delta/slides/r_programming_introduction/slides2_coding_in_script.html</loc>
+    <lastmod>2025-10-27T02:15:32.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nceas-learning-hub.github.io/2025-06-delta/slides/r_programming_introduction/slides3_data_structures.html</loc>
+    <lastmod>2025-10-27T02:15:32.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nceas-learning-hub.github.io/2025-06-delta/s03a_r_programming_introduction_old.html</loc>
+    <lastmod>2025-10-27T02:15:32.878Z</lastmod>
   </url>
   <url>
     <loc>https://nceas-learning-hub.github.io/2025-06-delta/s03_r_programming_introduction.html</loc>
-    <lastmod>2025-06-06T17:30:54.165Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nceas-learning-hub.github.io/2025-06-delta/s01_r_rstudio_server_setup.html</loc>
-    <lastmod>2025-06-06T17:36:40.543Z</lastmod>
+    <lastmod>2025-10-27T02:15:32.878Z</lastmod>
   </url>
   <url>
     <loc>https://nceas-learning-hub.github.io/2025-06-delta/index.html</loc>
-    <lastmod>2025-06-06T17:37:54.343Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nceas-learning-hub.github.io/2025-06-delta/s02_git_setup.html</loc>
-    <lastmod>2025-06-06T17:30:54.153Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nceas-learning-hub.github.io/2025-06-delta/s04_r_quarto_literate_analysis.html</loc>
-    <lastmod>2025-06-06T17:30:54.176Z</lastmod>
+    <lastmod>2025-10-27T02:15:32.877Z</lastmod>
   </url>
   <url>
     <loc>https://nceas-learning-hub.github.io/2025-06-delta/s06_github_introduction.html</loc>
-    <lastmod>2025-06-06T17:30:54.196Z</lastmod>
+    <lastmod>2025-10-27T02:15:32.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nceas-learning-hub.github.io/2025-06-delta/s04_r_quarto_literate_analysis.html</loc>
+    <lastmod>2025-10-27T02:15:32.878Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nceas-learning-hub.github.io/2025-06-delta/s02_git_setup.html</loc>
+    <lastmod>2025-10-27T02:15:32.878Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nceas-learning-hub.github.io/2025-06-delta/slides/r_programming_introduction/slides4_functions.html</loc>
+    <lastmod>2025-10-27T02:15:32.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nceas-learning-hub.github.io/2025-06-delta/slides/r_programming_introduction/slides1_coding_in_console.html</loc>
+    <lastmod>2025-10-27T02:15:32.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nceas-learning-hub.github.io/2025-06-delta/s05_activity_reproducibility_lego.html</loc>
+    <lastmod>2025-10-27T02:15:32.878Z</lastmod>
   </url>
 </urlset>
