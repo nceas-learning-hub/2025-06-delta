@@ -9,19 +9,14 @@ format:
       - lh_slides_style.scss ### this lives in folder with slide qmd file
 ---
 
-## {#title-slide data-menu-title="Title Slide"} 
-
-[Working with R & RStudio]{.custom-title}
+[Functions in R]{.custom-title}
 
 [An introduction to programming in R]{.custom-subtitle}
 
 <hr class="hr-red">
 
-
 ::: {.column width="50%"}
 [**NCEAS Learning Hub**]{.custom-subtitle2}<br>
-[coreR]{.custom-subtitle2}<br>
-[May 2025]{.custom-subtitle3}
 :::
 
 ---

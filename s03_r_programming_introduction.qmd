@@ -190,10 +190,50 @@ You can work with strings in your data in R easily thanks to the [`stringr`](htt
 <iframe class="slide-deck" src="slides/r_programming_introduction/slides3_data_structures.html" style="border: 1px solid #2e3846;"></iframe>
 ```
 
+::: {.callout-exercise}
 
-!!! INCLUDE AN EXAMPLE HERE as a checkin from the slides!
+## Accessing data in a data frame
 
+Working with data frames is an important skill for data science in R.  There are some built-in datasets in R, including sample data frames that we can work with.  Let's access the built-in `mtcars` data frame, a set of attributes of various cars from Motor Trends 1974.
 
+```{r}
+data(mtcars) ### loads a built-in dataset
+head(mtcars) ### look at the first few rows
+```
+
+Figure out at least 3 ways to access the horsepower `hp` of a Datsun 710.
+::: {.callout-answer}
+
+Here are a few ways that would work:
+```{r}
+#|eval: false
+### choose the 3rd row, 4th column:
+mtcars[3, 4]
+
+### Put the hp column into a vector, then choose
+### the 3rd element of the vector (3 ways):
+x <- mtcars$hp
+x[3]           
+y <- mtcars[['hp']]
+y[3]
+z <- mtcars[ , 4]
+z[3]
+### note, you can chain these:
+mtcars$hp[3]
+
+### Similarly, select just the Datsun 710 row (3),
+### then choose the hp out of that
+x <- mtcars[3, ]
+x$hp
+
+### Use row names and column names:
+mtcars['Datsun 710', 'hp']
+```
+
+We'll learn more ways later, with the powerful and popular `tidyverse` package.  Note that choosing by row number and column number is a little risky - what if someone reorders the rows or columns and doesn't tell you?  So choosing by name where possible, or filtering using logical tests, is generally preferable!
+:::
+
+:::
 ## R Functions
 
 So far we've learned some of the basic syntax and concepts of R programming, and how to navigate RStudio, but we haven't done any complicated or interesting programming processes yet. This is where functions come in!
@@ -245,7 +285,7 @@ What operator do we use to save values to an object?
 :::: {.callout-answer}
 
 ```{r}
-# saving the mean using the assignment operator `<-`
+### saving the mean using the assignment operator `<-`
 mean_weight_lb <- mean(x = weight_lb)
 ```
 ::::
