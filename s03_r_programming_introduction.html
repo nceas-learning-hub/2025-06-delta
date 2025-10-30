@@ -458,13 +458,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#r-functions" id="toc-r-functions" class="nav-link" data-scroll-target="#r-functions"><span class="header-section-number">5</span> R Functions</a>
   <ul class="collapse">
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">5.1</span> Examples</a></li>
+  <li><a href="#use-the-read.csv-function-to-read-a-file-into-r" id="toc-use-the-read.csv-function-to-read-a-file-into-r" class="nav-link" data-scroll-target="#use-the-read.csv-function-to-read-a-file-into-r"><span class="header-section-number">5.2</span> Use the <code>read.csv()</code> function to read a file into R</a></li>
+  <li><a href="#working-with-data-frames-in-r" id="toc-working-with-data-frames-in-r" class="nav-link" data-scroll-target="#working-with-data-frames-in-r"><span class="header-section-number">5.3</span> Working with data frames in R</a></li>
   </ul></li>
-  <li><a href="#logical-operators-and-expressions" id="toc-logical-operators-and-expressions" class="nav-link" data-scroll-target="#logical-operators-and-expressions"><span class="header-section-number">7</span> Logical operators and expressions</a></li>
-  <li><a href="#error-messages-are-your-friends" id="toc-error-messages-are-your-friends" class="nav-link" data-scroll-target="#error-messages-are-your-friends"><span class="header-section-number">8</span> Error messages are your friends</a></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">9</span> R Packages</a></li>
-  <li><a href="#r-resources" id="toc-r-resources" class="nav-link" data-scroll-target="#r-resources"><span class="header-section-number">10</span> R Resources</a></li>
-  <li><a href="#clearing-the-environment" id="toc-clearing-the-environment" class="nav-link" data-scroll-target="#clearing-the-environment"><span class="header-section-number">11</span> Clearing the environment</a></li>
-  <li><a href="#save-workspace-image-to-.rdata" id="toc-save-workspace-image-to-.rdata" class="nav-link" data-scroll-target="#save-workspace-image-to-.rdata"><span class="header-section-number">12</span> Save Workspace Image to .RData?</a></li>
+  <li><a href="#logical-operators-and-expressions" id="toc-logical-operators-and-expressions" class="nav-link" data-scroll-target="#logical-operators-and-expressions"><span class="header-section-number">6</span> Logical operators and expressions</a></li>
+  <li><a href="#error-messages-are-your-friends" id="toc-error-messages-are-your-friends" class="nav-link" data-scroll-target="#error-messages-are-your-friends"><span class="header-section-number">7</span> Error messages are your friends</a></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">8</span> R Packages</a></li>
+  <li><a href="#r-resources" id="toc-r-resources" class="nav-link" data-scroll-target="#r-resources"><span class="header-section-number">9</span> R Resources</a></li>
+  <li><a href="#clearing-the-environment" id="toc-clearing-the-environment" class="nav-link" data-scroll-target="#clearing-the-environment"><span class="header-section-number">10</span> Clearing the environment</a></li>
+  <li><a href="#save-workspace-image-to-.rdata" id="toc-save-workspace-image-to-.rdata" class="nav-link" data-scroll-target="#save-workspace-image-to-.rdata"><span class="header-section-number">11</span> Save Workspace Image to .RData?</a></li>
   </ul>
 </nav>
     </div>
@@ -676,7 +678,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p><strong>Create an vector!</strong></p>
+<p><strong>Create a vector!</strong></p>
 <p>Create a vector containing the values 18.1, 8.9, 11.3, 11.2, and 15.7. These are heights of several trees in a park, in meters. Save the vector as an object with an appropriate name. Then, convert the heights from meters to feet, and store the result in a new object with an appropriate name.</p>
 <p>Bonus: find the average height of trees in the park (hint: look at the <code>mean()</code> function: <code>?mean</code> will show you the help page)</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
@@ -865,10 +867,10 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p><a href="slides/r_programming_introduction/slides4_functions.html">Full Screen</a></p>
 <iframe class="slide-deck" src="slides/r_programming_introduction/slides4_functions.html" style="border: 1px solid #2e3846;"></iframe>
 <section id="examples" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored"><span class="header-section-number">5.1</span> Examples</h3>
+<h3 data-number="5.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">5.1</span> Examples</h3>
 <p>Let’s create a vector to store the noon temperature (in Celsius) in Santa Barbara for three consecutive summer days:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">29</span>, <span class="dv">33</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">29</span>, <span class="dv">31</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
@@ -902,7 +904,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> temp_c)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 29</code></pre>
+<pre><code>[1] 28.33333</code></pre>
 </div>
 </div>
 </div>
@@ -1005,7 +1007,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<p>Perhaps you expected <code>mean_height_m</code> to change when you changed <code>weight_lb</code>? It did not! This demonstrates an important R programming concept: <strong>Assigning a value to one object does not change the values of other objects in R.</strong> Until you recalculate the mean height, <code>mean_height_m</code> still has its original value.</p>
+<p>Perhaps you expected <code>mean_height_m</code> to change when you changed <code>tree_h_m</code>? It did not! This demonstrates an important R programming concept: <strong>Assigning a value to one object does not change the values of other objects in R.</strong> Until you recalculate the mean height, <code>mean_height_m</code> still has its original value.</p>
 </div>
 </div>
 </div>
@@ -1017,19 +1019,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p>Now that we understand why the object’s value hasn’t changed - how do we update the value of <code>mean_height_m</code>? How is an R Script useful for this?</p>
 <p>This lead us to another important programming concept, specifically for R Scripts: <strong>An R Script runs top to bottom.</strong></p>
 <p>This order of operations is important because if you are running code line by line, the values in object may be unexpected. When you are done writing your code in an R Script, it’s good practice to clear your Global Environment and use the <code>Run</code> button and select “Run all” to test that your R Script successfully runs top to bottom.</p>
-<div class="callout callout-style-default callout-example no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Example</span>Example
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<div class="callout-example">
+</section>
 <section id="use-the-read.csv-function-to-read-a-file-into-r" class="level3" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="use-the-read.csv-function-to-read-a-file-into-r"><span class="header-section-number">5.2</span> Use the <code>read.csv()</code> function to read a file into R</h3>
 <p>So far we have learned how to assign values to objects in R, and what a function is, but we haven’t quite put it all together yet with real data yet. To do this, we will introduce the function <code>read.csv()</code>, which will be in the first lines of many of your future scripts. It does exactly what it says, it reads in a csv file to R.</p>
@@ -1102,8 +1092,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="working-with-data-frames-in-r" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="working-with-data-frames-in-r"><span class="header-section-number">6</span> Working with data frames in R</h2>
+<section id="working-with-data-frames-in-r" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="working-with-data-frames-in-r"><span class="header-section-number">5.3</span> Working with data frames in R</h3>
 <p>Remember, a <code>data.frame</code> is a data structure in R that can represent tables and spreadsheets. It is a collection of rows and columns of data, where each column has a name and represents a variable, and each row represents an observation containing a measurement of that variable. When we ran <code>read.csv()</code>, we read the file data into a <code>data.frame</code> and then saved the result in the object <code>bg_chem_dat</code>. Explore the dataset:</p>
 <ul>
 <li>Click on the word <code>bg_chem_dat</code> in the environment pane</li>
@@ -1116,11 +1106,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_chem_dat<span class="sc">$</span>Date)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>mean_temp <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem_dat<span class="sc">$</span>CTD_Temperature)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-</div>
-</div>
-</div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1142,8 +1127,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </section>
 </section>
-<section id="logical-operators-and-expressions" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="logical-operators-and-expressions"><span class="header-section-number">7</span> Logical operators and expressions</h2>
+<section id="logical-operators-and-expressions" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="logical-operators-and-expressions"><span class="header-section-number">6</span> Logical operators and expressions</h2>
 <p>We can ask questions about an object using <strong>logical operators and expressions</strong>. Let’s ask some “questions” about the <code>tree_h_m</code> object we made.</p>
 <ul>
 <li><code>==</code> means ‘is equal to’</li>
@@ -1170,8 +1155,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="error-messages-are-your-friends" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="error-messages-are-your-friends"><span class="header-section-number">8</span> Error messages are your friends</h2>
+<section id="error-messages-are-your-friends" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="error-messages-are-your-friends"><span class="header-section-number">7</span> Error messages are your friends</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/r_programming_introduction/practicalDev_googleErrorMessage.jpg" class="img-fluid" style="width:100.0%"></p>
@@ -1183,8 +1168,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p>Error messages are a learning opportunity. Use Google or ChatGPT (copy-and-paste!) to figure out what they mean. Note that knowing how to Google is a skill and takes practice - use our <a href="https://bren.ucsb.edu/masters-programs/master-environmental-data-science">Masters of Environmental Data Science</a> (MEDS) program workshop <a href="https://ucsb-meds.github.io/teach-me-how-to-google/#1">Teach Me How to Google</a> as a guide.</p>
 <p>And also know that there are errors that can creep in more subtly, without an error message right away, when you are giving information that is understood, but not in the way you meant. Like if I’m telling a story about tables and you’re picturing where you eat breakfast and I’m talking about data. This can leave me thinking I’ve gotten something across that the listener (or R) interpreted very differently. And as I continue telling my story you get more and more confused… So write clean code and check your work as you go to minimize these circumstances!</p>
 </section>
-<section id="r-packages" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="r-packages"><span class="header-section-number">9</span> R Packages</h2>
+<section id="r-packages" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="r-packages"><span class="header-section-number">8</span> R Packages</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/r_programming_introduction/allison-horst-r-doorway.png" class="img-fluid figure-img" style="width:80.0%"></p>
@@ -1194,8 +1179,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p>R packages are the building blocks of computational reproducibility in R. Each package contains a set of related functions that enable you to more easily do a task or set of tasks in R. There are thousands of community-maintained packages out there for just about every imaginable use of R - including many that you have probably never thought of!</p>
 <p>To install a package, we use the syntax <code>install.packages("packge_name")</code>. A package only needs to be installed once, so this code can be run directly in the console if needed. Generally, you don’t want to save your install package calls in a script, because when you run the script it will re-install the package, which you only need to do once, or if you need to update the package.</p>
 </section>
-<section id="r-resources" class="level2" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="r-resources"><span class="header-section-number">10</span> R Resources</h2>
+<section id="r-resources" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="r-resources"><span class="header-section-number">9</span> R Resources</h2>
 <table class="caption-top table">
 <caption>Awesome R Resources to Check out</caption>
 <colgroup>
@@ -1240,8 +1225,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </tbody>
 </table>
 </section>
-<section id="clearing-the-environment" class="level2" data-number="11">
-<h2 data-number="11" class="anchored" data-anchor-id="clearing-the-environment"><span class="header-section-number">11</span> Clearing the environment</h2>
+<section id="clearing-the-environment" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="clearing-the-environment"><span class="header-section-number">10</span> Clearing the environment</h2>
 <p>Take a look at the objects in your Environment (Workspace) in the upper right pane. The Workspace is where user-defined objects accumulate. There are a few useful commands for getting information about your Environment, which make it easier for you to reference your objects when your Environment gets filled with many, many objects.</p>
 <p><img src="images/r_programming_introduction/RStudio_IDE_env.png" class="img-fluid"></p>
 <p>You can get a listing of these objects with a couple of different R functions:</p>
@@ -1269,13 +1254,13 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="quick-tip-1" class="level4 {,callout-tip}" data-number="11.0.1">
-<h4 data-number="11.0.1" class="anchored" data-anchor-id="quick-tip-1"><span class="header-section-number">11.0.1</span> Quick Tip</h4>
+<section id="quick-tip-1" class="level4 {,callout-tip}" data-number="10.0.1">
+<h4 data-number="10.0.1" class="anchored" data-anchor-id="quick-tip-1"><span class="header-section-number">10.0.1</span> Quick Tip</h4>
 <p>It’s good practice to clear your environment. Over time your Global Environmental will fill up with many objects, and this can result in unexpected errors or objects being overridden with unexpected values. Also it’s difficult to read / reference your environment when it’s cluttered!</p>
 </section>
 </section>
-<section id="save-workspace-image-to-.rdata" class="level2" data-number="12">
-<h2 data-number="12" class="anchored" data-anchor-id="save-workspace-image-to-.rdata"><span class="header-section-number">12</span> Save Workspace Image to .RData?</h2>
+<section id="save-workspace-image-to-.rdata" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="save-workspace-image-to-.rdata"><span class="header-section-number">11</span> Save Workspace Image to .RData?</h2>
 <p><img src="images/r_programming_introduction/save-workspace.png" class="img-fluid" style="width:50.0%"></p>
 <p><strong>DON’T SAVE</strong></p>
 <p>When ever you close or switch projects you will be promped with the question: Do you want to save your workspace image to /“current-project”/ .RData?</p>
