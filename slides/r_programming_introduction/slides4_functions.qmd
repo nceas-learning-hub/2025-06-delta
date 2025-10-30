@@ -12,6 +12,8 @@ execute:
   code-line-numbers: false
 ---
 
+## {#title-slide data-menu-title="Title Slide"} 
+
 [Functions in R]{.custom-title}
 
 [An introduction to programming in R]{.custom-subtitle}
