@@ -7,6 +7,9 @@ format:
     chalkboard: true
     theme:
       - lh_slides_style.scss ### this lives in folder with slide qmd file
+execute:
+  echo: true
+  code-line-numbers: false
 ---
 
 [Functions in R]{.custom-title}
@@ -21,68 +24,145 @@ format:
 
 ---
 
-**A function is a way to group a set of commands together to undertake a task in a reusable way.** When a function is executed, it produces a return value. We often say that we are "calling" a function when it is executed. Functions can be user defined and saved to an object using the assignment operator, so you can write whatever functions you need, but R also has a mind-blowing collection of built-in functions ready to use. To start, we will be using some built in R functions.
+[Functions in R]{.slide-title}
 
-**All functions are called using the same syntax:** function name with parentheses around what the function needs in order to do what it was built to do. These "needs" are pieces of information called arguments, and are required to return an expected value.
+A function is a way to group a set of commands together to undertake a task in a reusable way.
 
-::: {.callout-caution icon=false}
-### Syntax of a function will look something like:
+:::{.body-text}
+R also has a mind-blowing collection of built-in functions ready to use. To start, we will be using some built in R functions, and later learn to write our own.
 
+When we execute or "call" a function, usually it looks like the function name with parentheses around the "arguments" the function needs in order to do what it was built to do, like this:
+:::
+
+```{r}
+#| eval: false
+result_val <- function_name(argument1 = val1, argument2 = val2, ...)
 ```
-result_value <- function_name(argument1 = value1, argument2 = value2, ...)
-```
+
+---
+
+[Functions in R]{.slide-title}
+
+Here are a few functions we've seen so far:
+
+:::{.body-text}
+
+* `c()` for combining elements into a vector
+* `list()` for creating a list
+* `data.frame()` for creating a data frame
+* `mean()` for calculating the mean value of a vector
+* `head()` for looking at the first few values of some object
+
 :::
 
 ---
 
-Before we use a function, let's talk about Help pages.
+[Help pages for functions in R]{.slide-title}
 
-## Getting help using help pages
+:::{.body-text}
 
-What if you know the name of the function that you want to use, but don't know exactly how to use it? Thankfully RStudio provides an easy way to access the help documentation for functions.
+RStudio provides an easy way to access the help documentation for functions.
 
-The next function we're about to use is the `mean()` function. 
-
-To access the help page for `mean()`, enter the following into your console:
-
-```{r}
-#| eval: false
-?mean
-```
-
-The Help pane will show up in the lower right hand corner of your RStudio.
-
-The Help page is broken down into sections:
-
--   Description: An extended description of what the function does.
--   Usage: The arguments of the function(s) and their default values.
--   Arguments: An explanation of the data each argument is expecting.
--   Details: Any important details to be aware of.
--   Value: The data the function returns.
--   See Also: Any related functions you might find useful.
--   Examples: Some examples for how to use the function.
-
-And there's also help for when you only sort of remember the function name: double-question mark:
+Let's look at the `mean()` function.  To access the help page for `mean()`, enter the following into your **console**:
+:::
 
 ```{r}
 #| eval: false
-??install 
+help(mean) ### `help` function to show a help page for a function
+?mean      ### a more convenient shortcut
+??mean     ### if you don't know the exact function name or package
 ```
+
+:::{.callout-tip}
+### Console vs. script panes
+
+::::{.body-text}
+
+Most of the time you should be writing your code in **scripts**.  But there are some things you should generally do in the **console** instead (things you don't need to run every time you run the script):
+
+* help pages - you only need help as you are *writing* your script, not as you *run* it!
+* installing packages with `install.packages()`
+
+::::
+:::
 
 ---
 
-::: {.callout-caution icon=false}
-#### Not all functions have (or require) arguments
+[Help pages for functions in R]{.slide-title}
 
-Check out the documentation or Help page for `date()`.
+The Help page is broken down into sections:
+
+:::{.body-text}
+
+-   **Description**: An extended description of what the function does.
+-   **Usage**: The arguments of the function(s) and their default values.
+-   **Arguments**: An explanation of the data each argument is expecting.
+-   **Details**: Any important details to be aware of.
+-   **Value**: The data the function returns.
+-   **See Also**: Any related functions you might find useful.
+-   **Examples**: Some examples for how to use the function.
+
+:::
+
+---
+
+[Help pages for functions in R]{.slide-title}
+
+::: {.callout-note}
+### Not all functions have (or require) arguments
+
+For example, check out the documentation or Help page for `date()`.
+
+:::
 
 ```{r}
 #| eval: false
 ?date()
 ```
 
+---
+
+[Functions and packages in R]{.slide-title}
+
+:::{.body-text}
+There are thousands of built-in functions available when you first start up R, but there are also many many packages available with other functions and/or datasets.
+
+To install a new package into your library (a location on your computer where R will find the packages) (**do this in the console, not script!**):
 :::
+
+```{r}
+#| eval: false
+
+### vetted packages from the CRAN package repository:
+install.packages('<packagename here>')
+### some packages are available through GitHub:
+remotes::install_github('<username>/<packagename>')
+```
+
+:::{.body-text}
+Just because a package is **installed** doesn't mean R has access to the functions yet!  We need to load ("attach") a package into R from your package library.  Typically you do this at the top of a script.
+:::
+
+```{r}
+#| eval: false
+
+library(packagename) ### note, no quotes needed!
+```
 
 ---
 
-!!!packages?
+[Functions and packages in R]{.slide-title}
+
+:::{.callout-warning}
+### Two common error messages
+
+:::{.body-text}
+Always carefully read any error messages you get!  Most of the time they are pretty helpful to let you know what you've done wrong.  Here are two common error messages associated with loading packages and functions:
+
+* `Error in library(<packagename>) : there is no package called ‘<packagename>’`
+    * you probably either misspelled the package name or haven't yet installed it.
+* `Error in <functionname>(): could not find function "<functionname>"`
+    * you probably have the name wrong, or haven't loaded the package (with `library()`) that contains the function.
+
+:::
+:::
