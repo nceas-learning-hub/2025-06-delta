@@ -22,11 +22,14 @@ website:
 
   bread-crumbs: false
   navbar:
+    search: true
     right:
       - text: "Instructors"
         menu:
           - text: "Casey O'Hara"
             href: https://www.oharascience.com/
+      - icon: house-door-fill
+        href: https://www.nceas.ucsb.edu/learning-hub
       - icon: github
         href: https://github.com/nceas-learning-hub/2025-06-delta
         aria-label: GitHub
@@ -34,14 +37,16 @@ website:
   sidebar:
     title: "Training Materials"
     style: "floating"
-    search: true
-    tools:
-      - icon: house-door-fill
-        href: https://www.nceas.ucsb.edu/learning-hub
-      - icon: twitter
-        href: https://twitter.com/ucsb_nceas
-      - icon: github
-        href: nceas-learning-hub.github.io/2025-06-delta
+    pinned: true
+    # collapse-level: 1 ### only shows top level pages and sections
+    # search: true ### put this in navbar level
+    # tools: ### these are all redundant or have been added above
+    #   - icon: house-door-fill
+    #     href: https://www.nceas.ucsb.edu/learning-hub
+    #   - icon: twitter
+    #     href: https://twitter.com/ucsb_nceas
+    #   - icon: github
+    #     href: nceas-learning-hub.github.io/2025-06-delta
     contents:
       - index.qmd # preface
       # START SESSIONS
@@ -55,6 +60,35 @@ website:
       - section: "Day 2"
         contents:
         - s06_github_introduction.qmd
+        - s01_r_rstudio_server_setup.qmd
+        - s02_git_setup.qmd
+        - s03_r_programming_introduction.qmd
+        - s04_r_quarto_literate_analysis.qmd
+        - s05_activity_reproducibility_lego.qmd
+      - section: "Day 3"
+        contents:
+        - s06_github_introduction.qmd
+        - s01_r_rstudio_server_setup.qmd
+        - s02_git_setup.qmd
+        - s03_r_programming_introduction.qmd
+        - s04_r_quarto_literate_analysis.qmd
+        - s05_activity_reproducibility_lego.qmd
+      - section: "Day 4"
+        contents:
+        - s06_github_introduction.qmd
+        - s01_r_rstudio_server_setup.qmd
+        - s02_git_setup.qmd
+        - s03_r_programming_introduction.qmd
+        - s04_r_quarto_literate_analysis.qmd
+        - s05_activity_reproducibility_lego.qmd
+      - section: "Day 5"
+        contents:
+        - s06_github_introduction.qmd
+        - s01_r_rstudio_server_setup.qmd
+        - s02_git_setup.qmd
+        - s03_r_programming_introduction.qmd
+        - s04_r_quarto_literate_analysis.qmd
+        - s05_activity_reproducibility_lego.qmd
       # END SESSIONS
 
   page-footer:

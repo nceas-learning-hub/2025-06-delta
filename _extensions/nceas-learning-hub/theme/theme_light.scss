@@ -94,6 +94,14 @@ $code-block-bg: $lh-gray-0; // code block background color
   font-size: 16px;
 }
 
+// THIS PART TRYING TO FIGRE OUT SCROLLING OF SIDEBAR
+.quarto-sidebar {
+  position: sticky;
+  overflow-y: scroll;
+  top: 0px;
+  height: 100vh;
+}
+
 .quarto-title-block .title, .subtitle {
   /* in elements with quarto-title-block class, change color for classes
   // title and subtitle */
